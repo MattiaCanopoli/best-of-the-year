@@ -47,25 +47,24 @@ public class PageController {
 	@GetMapping("/songs")
 	public String songs(Model model) {
 		String bestSongs = "";
-
 		for (Song song : getBestSongs()) {
-			bestSongs += song.getSongTitle();
+			bestSongs += song.getSongTitle() + ", ";
 		}
 
+		model.addAttribute("title", "songs");
 		model.addAttribute("list", bestSongs);
 		return "songs";
 	}
 
 	@GetMapping("/movies")
 	public String movies(Model model) {
-		model.addAttribute("title", "movies");
 		String bestMovies = "";
-
 		for (Movie movie : getBestMovies()) {
-			bestMovies += movie.getMovieTitle();
+			bestMovies += movie.getMovieTitle() + ", ";
 		}
 
 		model.addAttribute("list", bestMovies);
+		model.addAttribute("title", "movies");
 		return "movies";
 	}
 
