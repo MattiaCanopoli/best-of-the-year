@@ -8,6 +8,7 @@ import org.bestof.java.models.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -66,6 +67,37 @@ public class PageController {
 		model.addAttribute("list", bestMovies);
 		model.addAttribute("title", "movies");
 		return "movies";
+	}
+
+	@GetMapping("/movies/{id}")
+	public String movieDetail(Model model, @PathVariable("id") Integer movieId) {
+
+		String movieTitle = "";
+
+		for (Movie movie : getBestMovies()) {
+			if (movieId.equals(movie.getId())) {
+				movieTitle = movie.getTitle();
+				break;
+			}
+		}
+
+		model.addAttribute("title", movieTitle);
+		return "detail";
+	}
+
+	@GetMapping("/songs/{id}")
+	public String songDetail(Model model, @PathVariable("id") Integer songId) {
+
+		String songTitle = "";
+
+		for (Song song : getBestSongs()) {
+			if (songId.equals(song.getId())) {
+				songTitle = song.getTitle();
+				break;
+			}
+		}
+		model.addAttribute("title", songTitle);
+		return "detail";
 	}
 
 }
