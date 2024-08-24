@@ -9,15 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/")
 public class PageController {
 
 	@GetMapping("/")
-	public String home(@RequestParam(name = "name") String name, Model model) {
-		model.addAttribute("name", name);
+	public String home(Model model) {
 		model.addAttribute("title", "HomePage");
 		return "home";
 	}
@@ -48,9 +46,10 @@ public class PageController {
 	public String songs(Model model) {
 		String bestSongs = "";
 		for (Song song : getBestSongs()) {
-			bestSongs += song.getSongTitle() + ", ";
+			bestSongs += song.getTitle() + ", ";
 		}
 
+		model.addAttribute("objList", getBestSongs());
 		model.addAttribute("title", "songs");
 		model.addAttribute("list", bestSongs);
 		return "songs";
@@ -60,9 +59,10 @@ public class PageController {
 	public String movies(Model model) {
 		String bestMovies = "";
 		for (Movie movie : getBestMovies()) {
-			bestMovies += movie.getMovieTitle() + ", ";
+			bestMovies += movie.getTitle() + ", ";
 		}
 
+		model.addAttribute("objList", getBestMovies());
 		model.addAttribute("list", bestMovies);
 		model.addAttribute("title", "movies");
 		return "movies";

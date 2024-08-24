@@ -3,11 +3,11 @@ package org.bestof.java.models;
 public class Movie {
 
 	private Integer id;
-	private String movieTitle;
+	private String title;
 
 	public Movie(Integer id, String movieTitle) {
 		this.id = id;
-		this.movieTitle = movieTitle;
+		this.title = movieTitle;
 
 	}
 
@@ -19,11 +19,11 @@ public class Movie {
 		this.id = id;
 	}
 
-	public String getMovieTitle() {
-		return this.movieTitle;
+	public String getTitle() {
+		return this.title;
 	}
 
 	public void setName(String movieTitle) {
-		this.movieTitle = movieTitle;
+		this.title = movieTitle;
 	}
 }

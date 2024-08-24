@@ -3,11 +3,11 @@ package org.bestof.java.models;
 public class Song {
 
 	private Integer id;
-	private String songTitle;
+	private String title;
 
 	public Song(Integer id, String title) {
 		this.id = id;
-		this.songTitle = title;
+		this.title = title;
 
 	}
 
@@ -19,12 +19,12 @@ public class Song {
 		this.id = id;
 	}
 
-	public String getSongTitle() {
-		return this.songTitle;
+	public String getTitle() {
+		return this.title;
 	}
 
 	public void setName(String title) {
-		this.songTitle = title;
+		this.title = title;
 	}
 
 }
