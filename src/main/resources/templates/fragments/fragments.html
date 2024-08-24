@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head th:fragment="head">
+	<title>[[${title}]]</title>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.css}" />
+</head>
+
+<body>
+
+	<!--titles list, string-->
+	<div th:fragment="list" class="container text-center">
+		<h1 class="text-primary">Best [[${title}]] of the year</h1>
+		<p>[[${list}]]</p>
+	</div>
+	
+	<!--card with li for each element -->
+	<th:block th:fragment="card">
+		<div class="container mt-5">
+			<div class="row">
+				<div class="d-flex justify-content-center col-12 text-center">
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">My best [[${title}]]</h5>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item" th:each="obj : ${objList}" th:text="${obj.title}"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</th:block>
+
+</body>
+
+</html>
