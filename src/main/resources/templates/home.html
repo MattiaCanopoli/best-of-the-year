@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<title>Home</title>
+<head th:replace="fragments :: head">
+	<title>[[${title}]]</title>
 </head>
 <body>
 	<div>
-		<h1>Best of the year by [[${name}]]</h1>
+		<h1 class="text-danger">Best of the year by [[${name}]]</h1>
 		<!--<h1 th:text="'Best of the year by ' + ${name}"></h1>-->
 </h1>	</div>
 </body>
 </html>
+
