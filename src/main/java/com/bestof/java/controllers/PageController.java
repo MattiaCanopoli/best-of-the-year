@@ -18,6 +18,7 @@ public class PageController {
 	@GetMapping("/")
 	public String home(@RequestParam(name = "name") String name, Model model) {
 		model.addAttribute("name", name);
+		model.addAttribute("title", "HomePage");
 		return "home";
 	}
 
@@ -57,6 +58,7 @@ public class PageController {
 
 	@GetMapping("/movies")
 	public String movies(Model model) {
+		model.addAttribute("title", "movies");
 		String bestMovies = "";
 
 		for (Movie movie : getBestMovies()) {
