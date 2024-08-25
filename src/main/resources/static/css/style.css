@@ -1,0 +1,11 @@
+.my-color{
+background-color: rgb(240, 248, 255);
+}
+
+.my-color:hover{
+    background-color: rgb(167, 214, 255);
+}
+
+.card-body{
+background-color: aliceblue;
+}
