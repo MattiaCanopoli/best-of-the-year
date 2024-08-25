@@ -3,7 +3,7 @@
 	<head></head>
 	<body>
 		<header>
-			<nav th:fragment="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
+			<nav th:fragment="navbar(current)" class="navbar navbar-expand-lg bg-body-tertiary">
 			  <div class="container container-md">
 			    <a class="navbar-brand" href="/">Best of</a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,9 +11,9 @@
 			    </button>
 			    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			      <div class="navbar-nav">
-			        <a class="nav-link active" aria-current="page" href="/">Home</a>
-			        <a class="nav-link" href="/movies">Movies</a>
-			        <a class="nav-link" href="/songs">Songs</a>
+			        <a class="nav-link" th:classappend="${current == 'home' ? 'active' : 'non-active'}" aria-current="page" href="/">Home</a>
+			        <a class="nav-link" th:classappend="${current == 'movies' ? 'active' : 'non-active'}" href="/movies">Movies</a>
+			        <a class="nav-link" th:classappend="${current == 'songs' ? 'active' : 'non-active'}" href="/songs">Songs</a>
 			      </div>
 			    </div>
 			  </div>

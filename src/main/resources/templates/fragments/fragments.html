@@ -20,12 +20,12 @@
 		<div class="container mt-5">
 			<div class="row">
 				<div class="d-flex justify-content-center col-12 text-center">
-					<div class="card" style="width: 18rem;">
+					<div class="card " style="width: 18rem;">
 						<div class="card-body">
 							<h5 class="card-title">My best [[${title}]]</h5>
 						</div>
 						<ul class="list-group list-group-flush">
-							<li class="list-group-item" th:each="obj : ${objList}">
+							<li class="list-group-item my-color" th:each="obj : ${objList}">
 								<a class="text-reset text-decoration-none" th:href="@{|/${title}/ ${obj.id}|}">
 									[[${obj.title}]]
 								</a>
