@@ -18,6 +18,8 @@ public class PageController {
 	@GetMapping("/")
 	public String home(Model model) {
 		model.addAttribute("title", "HomePage");
+		String userName = "uName";
+		model.addAttribute("name", userName);
 		return "home";
 	}
 
