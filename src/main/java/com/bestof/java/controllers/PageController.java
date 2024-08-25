@@ -55,7 +55,7 @@ public class PageController {
 		model.addAttribute("objList", getBestSongs());
 		model.addAttribute("title", "songs");
 		model.addAttribute("list", bestSongs);
-		return "songs";
+		return "index";
 	}
 
 	@GetMapping("/movies")
@@ -68,7 +68,7 @@ public class PageController {
 		model.addAttribute("objList", getBestMovies());
 		model.addAttribute("list", bestMovies);
 		model.addAttribute("title", "movies");
-		return "movies";
+		return "index";
 	}
 
 	@GetMapping("/movies/{id}")
